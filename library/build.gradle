@@ -43,12 +43,17 @@ android {
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from components.release
-                groupId 'com.imkhalid'
-                artifactId 'materialdatepicker'
-                version '1.0.1'
-                artifact(bundleReleaseAar)
+            AndroidDebug(MavenPublication) {
+                groupId "com.imkhalid"
+                artifactId "materialdatepicker.debug"
+                version "1.0.0"
+                artifact "$buildDir/outputs/aar/module-debug.aar"
+            }
+            AndroidRelease(MavenPublication) {
+                groupId "com.imkhalid"
+                artifactId "materialdatepicker"
+                version "1.0.1"
+                artifact "$buildDir/outputs/aar/module-release.aar"
             }
         }
     }
