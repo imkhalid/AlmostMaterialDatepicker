@@ -13,12 +13,6 @@ ext {
 
 android {
     compileSdk 31
-    publishing {
-        singleVariant("release") {
-            // if you don't want sources/javadoc, remove these lines
-            withSourcesJar()
-        }
-    }
 
     defaultConfig {
         minSdkVersion 14
