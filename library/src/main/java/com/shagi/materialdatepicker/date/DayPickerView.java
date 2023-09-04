@@ -21,9 +21,11 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -226,8 +228,8 @@ public abstract class DayPickerView extends RecyclerView implements DatePickerFr
         int minMonth = mController.getStartDate().get(Calendar.MONTH);
         final int position = (mSelectedDay.year - mController.getMinYear())
                 * MonthAdapter.MONTHS_IN_YEAR + month - minMonth;
-
-        smoothScrollToPosition(position);
+        if (position >= 0)
+            smoothScrollToPosition(position);
     }
 
     public void scrollToNextMonth() {
