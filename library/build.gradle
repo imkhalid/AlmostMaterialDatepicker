@@ -17,7 +17,6 @@ android {
         singleVariant("release") {
             // if you don't want sources/javadoc, remove these lines
             withSourcesJar()
-            withJavadocJar()
         }
     }
 
@@ -46,8 +45,8 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId 'com.imkhalid.materialdatepicker'
-                artifactId 'material-datepicker'
+                groupId 'com.imkhalid'
+                artifactId 'materialdatepicker'
                 version '1.0.1'
                 artifact(bundleReleaseAar)
             }
