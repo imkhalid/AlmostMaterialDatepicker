@@ -317,11 +317,7 @@ public class DatePickerFragmentDialog extends DialogFragment implements
         mYearPickerPopup = new ListPopupWindow(mYearView.getContext());
         mYearPickerPopup.setAnchorView(mYearView);
 
-        if (Build.VERSION.SDK_INT >= 19) {
-            mYearPickerPopup.setPromptView(yearPickerView);
-        } else {
-            mYearPickerPopup.setOnItemClickListener(yearPickerView.getOnItemClickListener());
-        }
+        mYearPickerPopup.setOnItemClickListener(yearPickerView.getOnItemClickListener());
 
         mYearPickerPopup.setAdapter(yearPickerView.getAdapter());
 
