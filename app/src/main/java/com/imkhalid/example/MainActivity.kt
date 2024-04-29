@@ -23,7 +23,10 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(applicationContext, simpleDateFormat.format(calendar.time), Toast.LENGTH_SHORT).show()
             }, 2017, 11, 4)
+            val calendar = Calendar.getInstance()
+            calendar.set(2024, 5, 15)
             dialog.setMinDate( Date().time)
+            dialog.setMaxDate( calendar.time.time)
             dialog.show(supportFragmentManager, "tag")
         }
     }
