@@ -892,6 +892,8 @@ public class DatePickerFragmentDialog extends DialogFragment implements
     public void onClick(View v) {
         if (v.getId() == R.id.amdp_date_picker_year) {
             mYearPickerPopup.show();
+            // The popup's list starts at the top; scroll it to the currently selected year.
+            mYearPickerPopup.setSelection(getSelectedDay().year - getMinYear());
         } else if (v.getId() == R.id.amdp_date_picker_month_and_day) {
             setCurrentView(MONTH_AND_DAY_VIEW);
         } else if (v.getId() == R.id.amdp_month_picker) {
